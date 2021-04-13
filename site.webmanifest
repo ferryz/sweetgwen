@@ -1,0 +1,20 @@
+{
+    "name": "Sweet Gwendoline",
+    "short_name": "Sweet Gwendoline",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#e64b37",
+    "background_color": "#e64b37",
+    "start_url": "http://sweetgwendolinefrenchgin.com",
+    "display": "standalone"
+}
