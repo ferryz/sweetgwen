@@ -23,6 +23,7 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e64b37">
 	<meta name="msapplication-TileColor" content="#e64b37">
 	<meta name="theme-color" content="#e64b37">
+	<meta property="og:image" content="https://www.sweetgwendolinefrenchgin.com/wp-content/themes/sweetgwendoline/img/sg-keyhole.png">
 	<?php wp_head(); ?>
 </head>
 
