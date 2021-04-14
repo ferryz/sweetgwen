@@ -30,6 +30,10 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'sweetgwendoline' ); ?></a>
+	<img src="/wp-content/themes/sweetgwendoline/img/sg-corner.png" class="sg-corner corner-tl">
+	<img src="/wp-content/themes/sweetgwendoline/img/sg-corner.png" class="sg-corner corner-tr">
+	<img src="/wp-content/themes/sweetgwendoline/img/sg-corner.png" class="sg-corner corner-br">
+	<img src="/wp-content/themes/sweetgwendoline/img/sg-corner.png" class="sg-corner corner-bl">
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
