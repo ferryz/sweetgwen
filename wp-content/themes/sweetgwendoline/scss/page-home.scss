@@ -1,0 +1,168 @@
+@import '_imports.scss';
+
+.home {
+	.site-main {
+		position: relative;
+		background: transparent url('/wp-content/themes/sweetgwendoline/img/sg-home-hero.jpg') center center / 160% auto no-repeat;
+		min-height: 150vw;
+		text-align: center;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-end;
+		width: calc(100% + 104px);
+		margin-left: -52px;
+
+		@media screen and (min-width: 50em) {
+			background-size: contain;
+			height: 70vh;
+			min-height: 500px;
+			max-height: 700px;
+		}
+
+		.delight,
+		.bewitch {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 40%;
+			height: 40%;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+
+			@media screen and (min-width: 50em) {
+				justify-content: center;
+				width: 25%;
+			}
+
+			h2 {
+				margin: 0;
+				padding: 10px 0;
+				border-top: 2px dotted $red;
+				border-bottom: 2px dotted $red;
+				color: $dark;
+				text-transform: uppercase;
+				letter-spacing: .05px;
+				font-size: 1rem;
+				line-height: 1;
+
+				@media screen and (min-width: 50em) {
+					border-width: 5px;
+					padding: 15px 0;
+					font-size: 2rem;
+					letter-spacing: 2px;
+				}
+
+				@media screen and (min-width: 87.5em) {
+					padding: 20px 0;
+					font-size: 2.5rem;
+					letter-spacing: 3px;
+				}
+			}
+		}
+
+		.delight {
+			@media screen and (max-width: 49.999em) {
+
+			}
+		}
+
+		.bewitch {
+			left: auto;
+			right: 0;
+		}
+
+		.buy-now {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 25%;
+			height: 60%;
+
+			a {
+				display: block;
+				height: 60%;
+				width: 60%;
+				margin: 0 20%;
+				background: transparent url('/wp-content/themes/sweetgwendoline/img/home-buy-now.svg') center top / contain no-repeat;
+
+				span {
+					opacity: 0;
+				}
+			}
+		}
+
+		.quote {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 25%;
+			height: 60%;
+			background: transparent url('/wp-content/themes/sweetgwendoline/img/home-quote.svg') center top / 60% auto no-repeat;
+
+			&__inner {
+				opacity: 0;
+			}
+		}
+
+		.buy-now,
+		.quote {
+			@media screen and (max-width: 49.999em) {
+				display: none;
+			}
+		}
+
+		.page {
+			margin: 0;
+
+			.entry-content {
+				margin: 0;
+
+				h1 {
+					position: relative;
+					padding: 5px;
+					margin: 0 50px;
+					transform: translateY(84px);
+					text-transform: uppercase;
+					font-size: 2vw;
+					color: $light;
+					background: $dark;
+					line-height: 2.5rem;
+
+					@media screen and (max-width: 49.999em) {
+						display: none;
+					}
+
+					@media screen and (min-width: 87.5em) {
+						font-size: 2rem;
+						line-height: 2.75rem;
+						transform: translateY(96px);
+					}
+
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						top: -7px;
+						left: 0;
+						width: 100%;
+						height: 3px;
+						background: $dark;
+					}
+
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						bottom: -7px;
+						left: 0;
+						width: 100%;
+						height: 0;
+						border-bottom: 3px dotted $red;
+					}
+				}
+			}
+		}
+	}
+}

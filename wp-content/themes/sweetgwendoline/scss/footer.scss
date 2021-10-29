@@ -1,0 +1,185 @@
+@import '_imports.scss';
+
+/* Footer */
+
+.site-footer {
+  width: calc(100% + 104px);
+  margin: 0 -52px;
+}
+
+@media screen and (min-width: 50em) {
+  .site-footer {
+    padding: 60px 0;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 87.5em) {
+  .site-footer {
+    padding: 70px 0;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .site-footer::before,
+  .site-footer::after {
+    content: "";
+    display: block;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .25s ease;
+  }
+}
+
+@media screen and (min-width: 87.5em) {
+  .site-footer::before,
+  .site-footer::after {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.site-footer::before {
+  image-rendering: -webkit-optimize-contrast;
+  background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-bot-left-butterfly.png') left center / contain no-repeat;
+  left: 15px;
+}
+
+.site-footer::after {
+  image-rendering: -webkit-optimize-contrast;
+  background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-bot-right-gwen.png') right center / contain no-repeat;
+  right: 15px;
+}
+
+.site-info p {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.global-footer {
+  padding: 40px 20px 20px;
+  background: $dark;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  @media screen and (min-width: 50em) {
+    padding-top: 60px;
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+}
+
+.global-footer .footer-logo .widget {
+  text-align: center;
+  margin: 0;
+}
+
+.global-footer .footer-logo img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+@media screen and (min-width: 50em) {
+  .global-footer .footer-logo img {
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .global-footer .footer-brand {
+    flex: 0 1 50%;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .global-footer .footer-brand {
+    flex: 0 1 33.333%;
+  }
+}
+
+.global-footer .wp-block-social-links {
+  justify-content: center;
+}
+
+.global-footer .footer-menu ul.menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .global-footer .footer-menu {
+    flex: 0 1 50%;
+  }
+
+  .global-footer .footer-menu ul.menu {
+    columns: 2;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .global-footer .footer-menu {
+    flex: 0 1 33.333%;
+  }
+}
+
+.global-footer .footer-menu ul.menu li {
+  display: block;
+  text-align: center;
+}
+
+@media screen and (min-width: 50em) {
+  .global-footer .footer-menu ul.menu li {
+    text-align: left;
+  }
+}
+
+.global-footer .footer-menu ul.menu li a {
+  display: block;
+  padding: 10px;
+  color: $light;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.global-footer .footer-menu ul.menu li a:hover {
+  color: $red;
+  transition: all .25s ease;
+}
+
+.global-footer .footer-copyright {
+  max-width: 600px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $light;
+}
+
+@media screen and (min-width: 50em) {
+  .global-footer .footer-copyright {
+    flex: 0 1 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .global-footer .footer-copyright {
+    flex: 0 1 33.333%;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.global-footer .footer-copyright a {
+  color: $red;
+}
+
+.global-footer .footer-copyright a:hover {
+  text-decoration: none;
+}

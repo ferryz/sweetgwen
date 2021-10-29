@@ -1,0 +1,26 @@
+/* Colors */
+
+$light: #fbf3e2;
+$tan: #e2ca93;
+$red: #e64b38;
+$dark: #212121;
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Bizarre Sans';
+  src: url('/wp-content/themes/sweetgwendoline/fonts/bizarre-sans.woff2') format('woff2'),
+       url('/wp-content/themes/sweetgwendoline/fonts/bizarre-sans.woff') format('woff'),
+       url('/wp-content/themes/sweetgwendoline/fonts/bizarre-sans.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Chippewa Falls';
+  src: url('/wp-content/themes/sweetgwendoline/fonts/chippewa-falls.woff2') format('woff2'),
+       url('/wp-content/themes/sweetgwendoline/fonts/chippewa-falls.woff') format('woff'),
+       url('/wp-content/themes/sweetgwendoline/fonts/chippewa-falls.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}

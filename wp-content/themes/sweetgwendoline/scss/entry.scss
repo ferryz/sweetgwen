@@ -1,0 +1,16 @@
+@import '_imports.scss';
+
+.entry-header {
+	position: relative;
+	width: calc(100% + 104px);
+	margin-left: -52px;
+
+	@media screen and (max-width: 49.999em) {
+		border-top: 1px solid $dark;
+	}
+
+	h1.entry-title {
+		position: relative;
+		z-index: 1;
+	}
+}

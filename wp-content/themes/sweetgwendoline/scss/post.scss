@@ -1,0 +1,72 @@
+@import '_imports.scss';
+
+.post-template-default {
+	.site-main {
+		width: 100%;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.entry-title {
+		color: $red;
+		font-size: 2rem;
+		line-height: 1.2;
+
+		@media screen and (min-width: 50em) {
+			font-size: 3rem;
+		}
+	}
+
+	.entry-header {
+		width: 100%;
+		margin: 0;		
+
+		.entry-meta {
+			display: none;
+		}
+	}
+
+	.post-thumbnail {
+		width: calc(100% + 104px);
+		margin: 0 -52px;
+		transition: all .25s ease;
+
+		@media screen and (min-width: 50em) {
+			width: 100%;
+			margin: 0;
+		}
+
+		@media screen and (min-width: 87.5em) {
+			margin: 0 -100px;
+			width: calc(100% + 200px);
+		}
+
+		img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+	}
+
+	.entry-content {
+		p {
+			font-size: 1.125rem;
+			line-height: 1.6;
+		}
+	}
+
+	.entry-footer {
+		display: none;
+	}
+
+	.post-navigation {
+		border-top: 1px solid $dark;
+		margin-top: 20px;
+		padding-top: 20px;
+
+		a {
+			color: $red;
+			text-decoration: none;
+			font-size: 1.25rem;
+		}
+	}
+}

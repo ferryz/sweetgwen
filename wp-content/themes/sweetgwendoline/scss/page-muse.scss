@@ -1,0 +1,323 @@
+@import '_imports.scss';
+
+.page-template-page-muse {
+	article.page {
+		width: calc(100% + 104px);
+		margin-left: -52px;
+		position: relative;
+		overflow: hidden;
+
+		@media screen and (min-width: 50em) {
+			margin-bottom: -150px;
+		}
+	}
+
+	.entry-header {
+		padding: 10px 0 0;
+		border-bottom: 2px solid $dark;
+
+		@media screen and (min-width: 50em) {
+			padding: 30px 20px 10px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: calc(100% - 3px);
+			background: $tan;
+		}
+	}
+
+	h1.entry-title {
+		margin: 0;
+		text-align: center;
+		font-family: 'Bizarre Sans';
+		font-weight: 400;
+		line-height: 1;
+		font-size: 30vw;
+		color: $dark;
+
+		@media screen and (min-width: 35em) {
+			font-size: 8rem;
+		}
+
+		span {
+			position: relative;
+			display: block;
+			color: #fff;
+			font-family: 'Chippewa Falls';
+			font-size: 4rem;
+			line-height: 1;
+			margin-bottom: -2rem;
+
+			@media screen and (min-width: 50em) {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -2rem;
+				margin-bottom: 0;
+				font-size: 6rem;
+			}
+		}
+	}
+
+	.entry-content {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 0 40px;
+		clear: both;
+
+		@media screen and (min-width: 50em) {
+			padding: 0;
+		}
+
+		.gwen-whip {
+			pointer-events: none;
+			position: relative;
+			width: calc(100% + 40px);
+			margin-top: -30px;
+			margin-left: -20px;
+			position: relative;
+			z-index: 5;
+
+			.gwen {
+				display: none;
+
+				&.alt {
+					display: block;
+				}
+			}
+
+			@media screen and (min-width: 87.5em) {
+				width: 70%;
+				margin-left: -10%;
+				margin-top: -150px;
+				float: right;
+
+				.gwen {
+					display: block;
+
+					&.alt {
+						display: none;
+					}
+				}
+			}
+
+			.snap {
+				display: none;
+
+				@media screen and (min-width: 87.5em) {
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					transform: translateX(-100%);
+				}
+			}
+		}
+
+		p {
+			margin: 0 0 20px;
+			font-size: 1.125rem;
+			line-height: 1.6;
+
+			&:first-of-type {
+				margin-top: 30px;
+
+				@media screen and (min-width: 50em) {
+					margin-top: 80px;
+				}
+			}
+
+			em {
+				color: $red;
+				font-style: normal;
+				font-family: 'Chippewa Falls';
+			}
+
+			strong {
+				color: $red;
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	.entry-supplemental {
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		@media screen and (min-width: 50em) {
+			width: calc(100% - 200px);
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 50px 0 0 0;
+		}
+
+		.frame {
+			position: relative;
+
+			@media screen and (min-width: 50em) {
+				border: 100px solid $dark;
+				border-image: url('/wp-content/themes/sweetgwendoline/img/muse-frame.png') 200;
+				margin-bottom: 140px;
+			}
+		}
+
+		.frame-inner {
+			background: $dark;
+			color: #fff;
+			padding: 20px 40px 40px;
+
+			@media screen and (min-width: 50em) {
+				margin-top: -30px;
+				padding: 0 0 50px;
+			}
+
+			p {
+				margin: 0;
+				padding: 0;
+				font-size: 1.125rem;
+				line-height: 1.6;
+
+				strong {
+					display: inline-block;
+					font-family: 'Chippewa Falls';
+					font-weight: 400;
+					font-size: 2.75rem;
+					margin-right: 5px;
+					vertical-align: text-bottom;
+					transform: translateY(.925rem);
+				}
+
+				em {
+					color: $red;
+					font-size: 1.25rem;
+					letter-spacing: 1px;
+					font-family: 'Bizarre Sans';
+					text-transform: uppercase;
+					font-style: normal;
+				}
+			}
+
+			p + p {
+				padding-top: 2rem;
+			}
+		}
+
+		.buy-now {
+			display: block;
+			text-align: center;
+			margin-top: 30px;
+
+			@media screen and (min-width: 50em) {
+				position: absolute;
+				z-index: 10;
+				left: 50%;
+				top: calc(100% + 100px);
+				transform: translate(-50%, -50%);
+				margin-top: 0;
+			}
+
+			img {
+				vertical-align: bottom;
+				min-width: 100px;
+			}
+		}
+	}
+
+	.bizarre-mag {
+		position: absolute;
+		width: 120px;
+
+		@media screen and (min-width: 50em) {
+			width: 200px;
+		}
+
+		// shoes
+		&.no4 {
+			top: 160px;
+			left: 0;
+			transform: translate(-15%, -5%);
+			z-index: 4;
+
+			@media screen and (min-width: 50em) {
+				transform: translate(35%, -5%);
+				right: 0;
+				left: auto;
+			}
+
+			img {
+				transform: rotate(20deg);
+
+				@media screen and (min-width: 50em) {
+					transform: rotate(-20deg);
+				}
+			}
+		}
+
+		// boots
+		&.no7 {
+			top: 270px;
+			left: 0;
+			transform: translateX(-25%);
+			z-index: 2;
+
+			@media screen and (min-width: 50em) {
+				top: 450px;
+			}
+
+			img {
+				transform: rotate(-3deg);
+			}			
+		}
+
+		// butterfly
+		&.no9 {
+			top: 180px;
+			left: 0;
+			transform: translate(-60%, -30%);
+			z-index: 1;
+
+			@media screen and (max-width: 49.999em) {
+				display: none;
+			}
+
+			img {
+				transform: rotate(20deg);
+			}
+		}
+
+		// whip
+		&.no19 {
+			top: 180px;
+			right: 0;
+			transform: translateX(50%);
+			z-index: 3;
+
+			@media screen and (min-width: 50em) {
+				top: 380px;
+				transform: translateX(20%);
+			}
+
+			img {
+				transform: rotate(4deg);
+			}
+		}
+
+		img {
+			vertical-align: bottom;
+			box-shadow: 0 2px 3px rgba(#2e2a20, .65);
+			image-rendering: smooth;
+			image-rendering: -webkit-optimize-contrast;
+
+			@media screen and (min-width: 50em) {
+				box-shadow: 0 10px 12px rgba(#2e2a20, .45);
+			}
+		}
+	}
+}

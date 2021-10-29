@@ -1,0 +1,83 @@
+@import '_imports.scss';
+
+/* Header */
+
+.site-header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  width: calc(100% + 104px);
+  margin-left: -52px;
+}
+
+/* Header - Logo */
+
+.site-branding {
+  margin-top: 10px;
+
+  @media screen and (min-width: 50em) {
+    width: calc(100% - 240px);
+    max-width: 720px;
+    margin-top: 0;
+    padding: 10px 60px 20px;
+  }
+
+    @media screen and (min-width: 87.5em) {
+    width: calc(100% - 160px);
+  }
+}
+
+.site-branding .custom-logo-link {
+  display: block;
+  background: transparent url('/wp-content/themes/sweetgwendoline/img/sg-logo-stack.svg') center center / contain no-repeat;
+  width: 250px;
+  height: 102px;
+  margin: auto;
+
+  @media screen and (min-width: 50em) {
+    width: 100%;
+    height: 38px;
+    background: transparent url('/wp-content/themes/sweetgwendoline/img/sg-logo.svg') center center / contain no-repeat;
+  }
+}
+
+.site-branding img {
+  display: none;
+}
+
+/* Header - Buy Now */
+.site-header {
+  .buy-now {
+    position: absolute;
+    top: 10px;
+    transform: translateX(100px);
+    z-index: 2;
+
+    @media screen and (min-width: 50em) {
+      right: 110px;
+      top: 10px;
+      transform: none;
+    }
+
+    @media screen and (min-width: 87.5em) {
+      right: 150px;
+    }
+
+    div {
+      display: none;
+
+      &.small {
+        @media screen and (max-width: 74.999em) {
+          display: block;
+        }
+      }
+
+      &.big {
+        @media screen and (min-width: 75em) {
+          display: block;
+        }
+      }
+    }
+  }
+}

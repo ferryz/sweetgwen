@@ -1,10 +1,10 @@
 <?php
 /**
- * Sweet Gwendoline functions and definitions
+ * sweetgwen functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Sweet_Gwendoline
+ * @package sweetgwen
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'sweetgwendoline_setup' ) ) :
+if ( ! function_exists( 'sweetgwen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'sweetgwendoline_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function sweetgwendoline_setup() {
+	function sweetgwen_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Sweet Gwendoline, use a find and replace
-		 * to change 'sweetgwendoline' to the name of your theme in all the template files.
+		 * If you're building a theme based on sweetgwen, use a find and replace
+		 * to change 'sweetgwen' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'sweetgwendoline', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'sweetgwen', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'sweetgwendoline_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'sweetgwendoline' ),
+				'menu-1' => esc_html__( 'Primary', 'sweetgwen' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'sweetgwendoline_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'sweetgwendoline_custom_background_args',
+				'sweetgwen_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'sweetgwendoline_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'sweetgwendoline_setup' );
+add_action( 'after_setup_theme', 'sweetgwen_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,45 +111,92 @@ add_action( 'after_setup_theme', 'sweetgwendoline_setup' );
  *
  * @global int $content_width
  */
-function sweetgwendoline_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'sweetgwendoline_content_width', 640 );
+function sweetgwen_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'sweetgwen_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'sweetgwendoline_content_width', 0 );
+add_action( 'after_setup_theme', 'sweetgwen_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function sweetgwendoline_widgets_init() {
+function sweetgwen_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'sweetgwendoline' ),
+			'name'          => esc_html__( 'Sidebar', 'sweetgwen' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'sweetgwendoline' ),
+			'description'   => esc_html__( 'Add widgets here.', 'sweetgwen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer (Menu)', 'sweetgwen' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'sweetgwen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer (Copyright)', 'sweetgwen' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'sweetgwen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer (Logo)', 'sweetgwen' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add widgets here.', 'sweetgwen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer (Social Media)', 'sweetgwen' ),
+			'id'            => 'footer-4',
+			'description'   => esc_html__( 'Add widgets here.', 'sweetgwen' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
-add_action( 'widgets_init', 'sweetgwendoline_widgets_init' );
+add_action( 'widgets_init', 'sweetgwen_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function sweetgwendoline_scripts() {
-	wp_enqueue_style( 'sweetgwendoline-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'sweetgwendoline-style', 'rtl', 'replace' );
+function sweetgwen_scripts() {
+	wp_enqueue_style( 'sweetgwen-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'swiper-styles', get_template_directory_uri() . '/vendor/swiper/swiper-bundle.min.css', false, '7.2.1', 'all' );
+	wp_style_add_data( 'sweetgwen-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'sweetgwendoline-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() . '/vendor/swiper/swiper-bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'sweetgwen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'sweetgwen-scripts', get_template_directory_uri() . '/js/sweetgwen.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'sweetgwendoline_scripts' );
+add_action( 'wp_enqueue_scripts', 'sweetgwen_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -178,3 +225,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * ACF Options Page
+ */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Global Settings',
+		'menu_title'	=> 'SG Site Settings',
+		'menu_slug' 	=> 'site-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	/*
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	*/
+	
+}

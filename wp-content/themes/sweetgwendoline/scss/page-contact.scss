@@ -1,0 +1,156 @@
+@import '_imports.scss';
+
+.page-template-page-contact {
+	.entry-header {
+
+		@media screen and (max-width: 49.999em) {
+			border-bottom: 2px solid $dark;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			width: 100%;
+			height: calc(100% - 3px);
+			background: $red;
+
+			@media screen and (min-width: 50em) {
+				height: 54%;
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			width: 100%;
+			height: 2px;
+			background: $dark;
+			top: calc(54% + 3px);
+		}
+	}
+
+	h1.entry-title {
+		text-align: center;
+		max-width: 620px;
+		margin: 0 auto;
+
+		&::before,
+		&::after {
+			content: "";
+			display: none;
+			position: absolute;
+			height: 80%;
+			width: 30%;
+			background: transparent url('/wp-content/themes/sweetgwendoline/img/shine-left.svg') center center / contain no-repeat;
+			transform: translateX(-100%);
+			left: -30px;
+			top: 10%;
+
+			@media screen and (min-width: 70em) {
+				display: block;
+			}
+		}
+
+		&::after {
+			background-image: url('/wp-content/themes/sweetgwendoline/img/shine-right.svg');
+			transform: translateX(100%);
+			left: auto;
+			right: -30px;
+		}
+
+		img {
+			transform: translateY(-8px);
+			width: calc(100% - 52px);
+
+			@media screen and (min-width: 50em) {
+				width: 100%;
+			}
+		}
+	}
+
+	.entry-content {
+		display: flex;
+		flex-flow: column-reverse nowrap;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media screen and (min-width: 50em) {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		p {
+			font-size: 1.125rem;
+
+			br {
+				@media screen and (max-width: 49.999em) {
+					display: none;
+				}
+			}
+
+			em {
+				color: $red;
+			}
+		}
+
+		.buy-now {
+			display: block;
+			margin: 0 auto;
+
+			@media screen and (min-width: 50em) {
+				display: none;
+			}
+		}
+	}
+
+	.wpforms-container {
+		width: 100%;
+
+		.wpforms-form {
+			.wpforms-field {
+				input.wpforms-field-large,
+				textarea {
+					font-family: 'Futura', 'Futura PT', sans-serif;
+					letter-spacing: 0.5px;
+					color: $light;
+					background-color: $red;
+					border: 0;
+					border-radius: 0;
+					padding: 25px 15px;
+					transition: all .25s ease;
+
+					&:focus {
+						background-color: darken($red, 25%);
+					}
+
+					&::placeholder {
+						opacity: 1;
+						color: $light;
+						text-transform: uppercase;
+					}
+				}
+			}
+
+			.wpforms-submit {
+				font-size: 1.5rem;
+				font-family: 'Bizarre Sans';
+				letter-spacing: 1px;
+				color: $light;
+				background-color: $red;
+				border: 0;
+				border-radius: 50px;
+				padding: 12px 80px;
+				cursor: pointer;
+				transition: all .25s ease;
+
+				&:hover {
+					border: none;
+					background-color: $dark;
+				}
+			}
+		}
+	}
+}
