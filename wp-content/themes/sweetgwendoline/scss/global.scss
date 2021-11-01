@@ -52,6 +52,9 @@ body {
   top: 10px;
   left: 10px;
   box-shadow: -1px -1px 0 $light;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 20%, 20% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 20% 100%, 0 100%);
+
 
   @media screen and (min-width: 50em) {
     top: 20px;
@@ -63,6 +66,9 @@ body {
   top: 10px;
   right: 10px;
   box-shadow: 1px -1px 0 $light;
+  -webkit-clip-path: polygon(0 20%, 0 0, 100% 0, 100% 100%, 80% 100%);
+  clip-path: polygon(0 20%, 0 0, 100% 0, 100% 100%, 80% 100%);
+
 
   @media screen and (min-width: 50em) {
     top: 20px;
@@ -74,6 +80,8 @@ body {
   bottom: 10px;
   right: 10px;
   box-shadow: 1px 1px 0 $light;
+  -webkit-clip-path: polygon(0 80%, 80% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 80%, 80% 0, 100% 0, 100% 100%, 0 100%);
 
   @media screen and (min-width: 50em) {
     bottom: 20px;
@@ -85,9 +93,22 @@ body {
   bottom: 10px;
   left: 10px;
   box-shadow: -1px 1px 0 $light;
+  -webkit-clip-path: polygon(0 0, 20% 0, 100% 80%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 20% 0, 100% 80%, 100% 100%, 0 100%);
+
 
   @media screen and (min-width: 50em) {
     bottom: 20px;
     left: 20px;
+  }
+}
+
+// Chrome-specific adjustments
+.browser--chrome {
+  .site-header .menu-main-menu-container::before,
+  .site-header .menu-main-menu-container::after,
+  .site-footer::before,
+  .site-footer::after {
+    image-rendering: -webkit-optimize-contrast;
   }
 }

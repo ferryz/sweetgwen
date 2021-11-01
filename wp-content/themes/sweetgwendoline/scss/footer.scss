@@ -43,13 +43,11 @@
 }
 
 .site-footer::before {
-  image-rendering: -webkit-optimize-contrast;
   background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-bot-left-butterfly.png') left center / contain no-repeat;
   left: 15px;
 }
 
 .site-footer::after {
-  image-rendering: -webkit-optimize-contrast;
   background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-bot-right-gwen.png') right center / contain no-repeat;
   right: 15px;
 }

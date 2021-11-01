@@ -51,8 +51,12 @@
   .buy-now {
     position: absolute;
     top: 10px;
-    transform: translateX(100px);
+    right: 70px;
     z-index: 2;
+
+    @media screen and (max-width: 30em) {
+      right: 50px;
+    }
 
     @media screen and (min-width: 50em) {
       right: 110px;

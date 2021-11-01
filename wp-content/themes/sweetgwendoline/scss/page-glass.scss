@@ -31,7 +31,7 @@
 		font-family: 'Bizarre Sans';
 		font-weight: 400;
 		line-height: 1;
-		font-size: 30vw;
+		font-size: 28vw;
 		color: #fff;
 
 		@media screen and (min-width: 35em) {
@@ -71,19 +71,144 @@
 	.drink-lineup {
 		display: flex;
 		flex-flow: column nowrap;
+		margin: 0 -52px;
+		overflow: hidden;
 
 		@media screen and (min-width: 50em) {
 			flex-direction: row;
-			align-items: center;
-			justify-content: space-around;
+			justify-content: space-around;	
+		}
+
+		@media screen and (min-width: 120em) {
+			width: 100%;
+			margin: 0 auto;
+			overflow: visible;
+			max-width: 1600px;
 		}
 
 		.drink {
+			position: relative;
+			display: flex;
+			flex-flow: column;
+			justify-content: space-between;
+
+			@media screen and (min-width: 50em) {
+				width: 33.33%;
+			}
+			
+			&::before {
+				content: "";
+				display: block;
+				background: transparent url('/wp-content/themes/sweetgwendoline/img/recipe.svg') center center / contain no-repeat;
+				height: 111px;
+				width: 111px;
+				position: absolute;
+				z-index: 1;
+				top: 50%;
+				left: 50%;
+				border-radius: 50%;
+				box-shadow: 0 5px 10px rgba($dark, .25);
+				transform: translate(20%, -170%);
+				transform-origin: center center;
+				pointer-events: none;
+				opacity: 0;
+				transition: all .25s ease;
+			}
+
+			&:hover,
+			&:focus,
+			&:focus-within {
+				&::before {
+					opacity: 1;
+				}
+			}
+
+			h2 {
+				text-align: center;
+				padding: 0 10px;
+				
+				@media screen and (min-width: 50em) {
+					transform: translateY(-40px);
+					font-size: 1.25rem;
+				}
+
+				@media screen and (min-width: 87.5em) {
+					transform: translateY(-80px);
+					font-size: 1.5rem;
+				}
+
+				a {
+					color: $red;
+					text-decoration: none;
+				}
+			}
+
+			// Martini
+			&:nth-child(1) {
+				img {
+					transform: translateX(-18%);
+
+					@media screen and (min-width: 50em) {
+						transform: translate(-11%, 18%);
+					}
+				}
+			}
+
+			// Gin & Tonic
+			&:nth-child(2) {
+				&::before {
+					transform: translate(80%, -170%);
+					pointer-events: none;
+				}
+
+				&::after {
+					content: "";
+					display: block;
+					background: transparent url('/wp-content/themes/sweetgwendoline/img/gin-pop.svg') center center / contain no-repeat;
+					height: 40%;
+					width: 40%;
+					position: absolute;
+					z-index: 1;
+					top: 3%;
+					left: 1%;
+					pointer-events: none;
+
+					@media screen and (min-width: 50em) {
+						top: -3%;
+						left: 5%;
+					}
+				}
+
+				img {
+					transform: translateX(-18%);
+
+					@media screen and (min-width: 50em) {
+						transform: translateX(-10.25%);
+					}
+				}
+			}
+
+			// French 75
+			&:nth-child(3) {
+				img {
+					transform: translateX(-24%);
+
+					@media screen and (min-width: 50em) {
+						transform: translateX(-16%);
+					}
+				}
+			}
+
 			img {
-				width: auto;
-				height: 50vh;
-				min-height: 400px;
-				max-height: 600px;
+				height: 100%;
+				width: 100%;
+				object-fit: contain;
+				object-position: center bottom;
+
+				@media screen and (min-width: 50em) {
+					height: 90%;
+					width: 90%;
+				}
 			}
 		}
 	}
@@ -91,10 +216,13 @@
 	.drink {
 		display: flex;
 		flex-flow: column nowrap;
-		overflow: hidden;
 
 		@media screen and (min-width: 50em) {
 			flex-direction: row;
+		}
+
+		&.swiper-slide {
+			overflow: hidden;
 		}
 
 		&.swiper-slide-active {
@@ -165,7 +293,7 @@
 						line-height: 1.4;
 
 						@media screen and (min-width: 50em) {
-							font-size: 1.25rem;
+							font-size: 1.125rem;
 							padding: 0 0 10px 0;
 						}
 					}
@@ -181,6 +309,68 @@
 					&:last-of-type {
 						margin-bottom: 0;
 					}
+				}
+			}
+		}
+	}
+
+	.entry-content {
+		& > p {
+			position: relative;
+			font-size: 1.25rem;
+			line-height: 1.6;
+			width: 100%;
+			max-width: 850px;
+			margin: 0 auto;
+
+			&:first-of-type {
+				@media screen and (min-width: 50em) {
+					margin: 60px auto;
+					padding: 0 50px 30px;
+				}
+
+				&::after {
+					@media screen and (min-width: 50em) {
+						content: "";
+						display: block;
+						width: 40%;
+						height: 1px;
+						background: $dark;
+						position: absolute;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}				
+			}
+		}
+
+		.buy-now {
+			position: relative;
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 237px;
+
+			@media screen and (min-width: 50em) {
+				margin-bottom: -100px;
+
+				&::before,
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 10%;
+					left: -100%;
+					background: transparent url('/wp-content/themes/sweetgwendoline/img/twirl.svg') center center / contain no-repeat;
+					width: 120px;
+					height: 80px;
+				}
+
+				&::after {
+					left: auto;
+					right: -100%;
+					transform: scaleX(-1);
 				}
 			}
 		}

@@ -28,7 +28,7 @@ get_header();
 	    echo do_shortcode($display_posts);
 		} else {
 			// fallback shortcode
-		  echo do_shortcode('[display-posts image_size="full" include_excerpt="true" include_excerpt_dash="false" excerpt_length="500" excerpt_more="Read More" excerpt_more_link="true" wrapper="div" wrapper_class="posts" posts_per_page="5" pagination="true"]');
+		  //echo do_shortcode('[display-posts image_size="full" include_excerpt="true" include_excerpt_dash="false" excerpt_length="500" excerpt_more="Read More" excerpt_more_link="true" wrapper="div" wrapper_class="posts" posts_per_page="5" pagination="true"]');
 		}
 		?>
 

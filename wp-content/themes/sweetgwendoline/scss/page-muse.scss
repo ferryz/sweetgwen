@@ -38,7 +38,7 @@
 		font-family: 'Bizarre Sans';
 		font-weight: 400;
 		line-height: 1;
-		font-size: 30vw;
+		font-size: 28vw;
 		color: $dark;
 
 		@media screen and (min-width: 35em) {
@@ -53,6 +53,7 @@
 			font-size: 4rem;
 			line-height: 1;
 			margin-bottom: -2rem;
+			transform: skewY(-7deg);
 
 			@media screen and (min-width: 50em) {
 				display: inline-block;
@@ -60,6 +61,7 @@
 				margin-right: -2rem;
 				margin-bottom: 0;
 				font-size: 6rem;
+				transform: skewY(-5deg);
 			}
 		}
 	}
@@ -70,7 +72,7 @@
 		padding: 0 40px;
 		clear: both;
 
-		@media screen and (min-width: 50em) {
+		@media screen and (min-width: 87.5em) {
 			padding: 0;
 		}
 
@@ -164,18 +166,18 @@
 			@media screen and (min-width: 50em) {
 				border: 100px solid $dark;
 				border-image: url('/wp-content/themes/sweetgwendoline/img/muse-frame.png') 200;
-				margin-bottom: 140px;
+				margin-bottom: 50px;
 			}
 		}
 
 		.frame-inner {
 			background: $dark;
 			color: #fff;
-			padding: 20px 40px 40px;
+			padding: 20px 40px;
 
 			@media screen and (min-width: 50em) {
 				margin-top: -30px;
-				padding: 0 0 50px;
+				padding: 0;
 			}
 
 			p {
@@ -312,12 +314,209 @@
 		img {
 			vertical-align: bottom;
 			box-shadow: 0 2px 3px rgba(#2e2a20, .65);
-			image-rendering: smooth;
-			image-rendering: -webkit-optimize-contrast;
 
 			@media screen and (min-width: 50em) {
 				box-shadow: 0 10px 12px rgba(#2e2a20, .45);
 			}
+		}
+	}
+}
+
+.sweet-gwendoline {
+	margin: 0 auto;
+	width: calc(100% - 80px);
+	max-width: 1200px;
+	display: flex;
+	flex-flow: column nowrap;
+
+	@media screen and (min-width: 50em) {
+		margin-bottom: 100px;
+		width: calc(100% - 200px);
+	}
+
+	@media screen and (min-width: 75em) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	// SG Title - Mobile/Desktop Positioning
+	> .sg-title {
+		display: block;
+
+		@media screen and (min-width: 75em) {
+			display: none;
+		}
+	}
+
+	// SG Title - Styles
+	.sg-title {
+		font-size: 10vw;
+		line-height: 1;
+		text-transform: uppercase;
+		margin: 30px 0;
+
+		@media screen and (min-width: 35em) {
+			font-size: 8.5vw;
+		}
+
+		@media screen and (min-width: 75em) {
+			font-size: 5.25rem;
+		}
+
+		@media screen and (min-width: 87.5em) {
+			font-size: 5.5rem;
+		}
+
+		em {
+			display: block;
+			margin: 0 -2rem -.5rem 0;
+			text-transform: none;
+			font-family: 'Chippewa Falls';
+			font-style: normal;
+			transform: skewY(-4deg);
+			color: $red;
+			font-weight: 400;
+
+			@media screen and (min-width: 35em) {
+				margin-bottom: -0.5rem;
+			}
+
+			@media screen and (min-width: 75em) {
+				display: block;
+				margin-bottom: 0;
+			}
+
+			@media screen and (min-width: 87.5em) {
+				display: block;
+				margin-bottom: -1.5rem;
+				margin-left: -5rem;
+			}
+		}
+	}
+
+	.sg-image {
+		position: relative;
+		margin: 0 auto calc(20% + 150px);
+		max-width: 500px;
+
+		@media screen and (min-width: 50em) {
+			margin: 0 auto calc(20% + 100px);
+		}
+
+		@media screen and (min-width: 75em) {
+			margin-bottom: 200px;
+			width: 40%;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 0;
+			top: 20%;
+			right: 0;
+			bottom: -5%;
+			left: 0;
+			border: 50px solid $red;
+			border-image: url('/wp-content/themes/sweetgwendoline/img/frame-red-sm.png') 100;
+			background-color: $red;
+			background-clip: content-box;				
+			color: $light;
+
+			@media screen and (min-width: 50rem) {
+				border: 100px solid $red;
+				border-image: url('/wp-content/themes/sweetgwendoline/img/frame-red.png') 200;
+			}
+		}
+
+		.gwen {
+			position: relative;
+			z-index: 1;
+			padding: 20px;
+
+			@media screen and (min-width: 50rem) {
+				padding: 40px;
+			}
+		}
+
+		.buy-now {
+			display: block;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+
+			img {
+				position: absolute;
+				transform: translate(-50%, -20%);
+				max-width: 70%;
+
+				@media screen and (min-width: 75em) {
+					max-width: 50%;
+				}
+			}
+		}
+	}
+
+	.sg-wrapper {
+		@media screen and (min-width: 75em) {
+			width: 60%;
+			padding: 0 50px;
+		}
+
+		@media screen and (min-width: 87.5em) {
+			padding: 0 100px;
+		}
+
+		.sg-title {
+			display: none;
+
+			@media screen and (min-width: 75em) {
+				display: block;
+			}
+		}
+
+		.sg-content {
+			p {
+				margin: 0 0 20px;
+				font-size: 1.125rem;
+				line-height: 1.6;
+
+				&:first-of-type {
+					font-weight: 700;
+				}
+			}
+
+			h4 {
+				color: $red;
+				font-style: normal;
+				font-family: 'Chippewa Falls';
+				font-weight: 400;
+				font-size: 1.5rem;
+			}
+
+			h3 {
+				text-align: center;
+				color: $red;
+				text-transform: uppercase;
+
+				@media screen and (min-width: 50em) {
+					padding-left: 50px;
+					padding-right: 50px;
+				}
+
+				@media screen and (min-width: 87.5em) {
+					padding-left: 100px;
+					padding-right: 100px;
+				}
+			}
+		}
+	}
+}
+
+.browser--chrome {
+	.bizarre-mag {
+		img {
+			image-rendering: -webkit-optimize-contrast;
 		}
 	}
 }

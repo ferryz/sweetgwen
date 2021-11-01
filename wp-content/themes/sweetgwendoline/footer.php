@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<p>Website design by <a href="http://gchristman.com/">Greg Christman</a> &amp; developed by <a href="http://michaelferry.com/">Michael Ferry</a>.</p>
+			<p>Site design by <a href="http://gchristman.com/">Greg Christman</a>, development by <a href="http://michaelferry.com/">Michael Ferry</a>.</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- .site-inner -->
@@ -46,12 +46,8 @@
 	<?php endif; ?>
  </div>
 
-
-<?php wp_footer(); ?>
-
-<div class="overlay overlay--age-gate">
+<div class="overlay overlay--age-gate overlay--disabled">
 	<div class="modal modal--age-gate">
-		<!-- <a href="#" class="modal-close">&times;</a> -->
 		<div class="modal__content">
 			<img src="/wp-content/themes/sweetgwendoline/img/loop-top-left.png" class="corner-loop corner-loop--top-left" alt="Corner Loop">
 			<img src="/wp-content/themes/sweetgwendoline/img/loop-top-right.png" class="corner-loop corner-loop--top-right" alt="Corner Loop">
@@ -126,6 +122,8 @@
 		</div>
 	</div>
 </div>
+
+<?php wp_footer(); ?>
 
 </body>
 </html>

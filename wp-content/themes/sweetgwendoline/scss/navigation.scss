@@ -54,13 +54,11 @@
 }
 
 .site-header .menu-main-menu-container::before {
-  image-rendering: -webkit-optimize-contrast;
   background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-top-left-shoes.png') left center / contain no-repeat;
   left: 15px;
 }
 
 .site-header .menu-main-menu-container::after {
-  image-rendering: -webkit-optimize-contrast;
   background: transparent url('/wp-content/themes/sweetgwendoline/img/corner-top-right-gwen.png') right center / contain no-repeat;
   right: 15px;
 }

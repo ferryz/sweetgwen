@@ -35,7 +35,6 @@
 	<?php sweetgwendoline_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<!-- <a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a> -->
 		
 		<?php
 		the_content(
@@ -69,13 +68,17 @@
 	        ?>
 	        <div class="drink">
 	        	<a href="#" data-slide="<?php print $i ?>"><?php echo wp_get_attachment_image( $image, 'full' ); ?></a>
+	        	<h2 class="title"><a href="#" data-slide="<?php print $i ?>"><?php the_sub_field('title'); ?></a></h2>
 	        </div>
 		    <?php endwhile; ?>
 	  	</div>
     <?php endif; ?>
 
+    <a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a>
+
 		<?php if( have_rows('drink') ): ?>
-			<div class="overlay overlay--disabled">
+			<div class="overlay overlay--drinks overlay--disabled">
+				<div class="overlay-close"></div>
 				<div class="modal modal--drinks">
 					<div class="modal__inner">
 						<div class="modal-close">

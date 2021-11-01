@@ -11,12 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<h1 class="entry-title"><span>Come</span> <em>Find</em> <span>Us</span></h1>
 		<?php
+		/*
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
+		*/
 
 		if ( 'post' === get_post_type() ) :
 			?>
@@ -29,36 +32,37 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php sweetgwendoline_post_thumbnail(); ?>
+	<div class="entry-wrapper">
+		<?php sweetgwendoline_post_thumbnail(); ?>
 
-	<div class="entry-content">
+		<div class="entry-content">			
+			<?php
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'sweetgwendoline' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sweetgwendoline' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+
 		<!-- <a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a> -->
-		
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'sweetgwendoline' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sweetgwendoline' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
+		</div><!-- .entry-content -->
+	</div><!-- .entry-wrapper -->
 
 	<footer class="entry-footer">
 		<?php sweetgwendoline_entry_footer(); ?>

@@ -2,11 +2,6 @@
 
 /* Modal - Age Gate */
 
-/* ---------- TEMPORARY  ---------- */
-
-.overlay--age-gate,
-.modal--age-gate { display: none; }
-
 .overlay {
   position: fixed;
   z-index: 99;
@@ -25,6 +20,15 @@
   }
 }
 
+.overlay-close {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .modal {
   position: absolute;
   z-index: 100;
@@ -34,6 +38,15 @@
   background-color: $light;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .35);
   padding: 20px;
+
+  &.modal--age-gate {
+    @media screen and (max-width: 49.999em) {
+      padding: 10px;
+      transform: translate(-50%, 0);
+      width: calc(100% - 40px);
+      top: 20px;
+    }
+  }
 
   @media screen and (min-width: 50em) {
     box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
@@ -197,12 +210,70 @@
 
 .modal__content {
   position: relative;
+
+  .age-gate__heading {
+    position: relative;
+    height: 200px;
+    color: $light;
+    margin: -10px -10px 20px;
+    
+    @media screen and (min-width: 50em) {
+      margin: -30px -30px 40px;
+      height: 25vw;
+      max-height: 380px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent url('/wp-content/themes/sweetgwendoline/img/age-gate-mobile.png') center center / contain no-repeat;
+
+      @media screen and (min-width: 50em) {
+        background-image: url('/wp-content/themes/sweetgwendoline/img/age-gate-welcome.png');
+      }
+    }
+  }
+
+  .corner-loop {
+    pointer-events: none;
+    clip-path: none;
+    -webkit-clip-path: none;
+
+    &.corner-loop--top-left {
+      top: 0;
+      left: 0;
+    }
+
+    &.corner-loop--top-right {
+      top: 0;
+      right: 0;
+    }
+
+    &.corner-loop--bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+
+    &.corner-loop--bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+  }
 }
 
 .modal__content-inner {
-  padding: 40px;
+  padding: 20px;
   border: 1px solid $dark;
   text-align: center;
+
+  @media screen and (min-width: 50em) {
+    padding: 40px;
+  }
 }
 
 .modal__content-inner h2 {
@@ -215,25 +286,49 @@
 
 .modal__content-inner .age-gate__form {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+
+  @media screen and (min-width: 75em) {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 }
 
 .modal__content-inner .age-gate__form > div {
   position: relative;
   overflow: hidden;
-  margin: 0 10px;
+  width: 100%;
+  margin: 0 0 10px;
+
+  @media screen and (min-width: 87.5em) {
+    margin: 0 10px;
+  }
 }
 
 .modal__content-inner .age-gate__form .age-gate__month {
-  width: 180px;
+  @media screen and (min-width: 87.5em) {
+    width: 180px;
+  }
 }
 
 .modal__content-inner .age-gate__form .age-gate__day {
-  width: 120px;
+  @media screen and (min-width: 87.5em) {
+    width: 120px;
+  }
 }
 
 .modal__content-inner .age-gate__form .age-gate__year {
-  width: 120px;
+  @media screen and (min-width: 87.5em) {
+    width: 120px;
+  }
+}
+
+.modal__content-inner .age-gate__form .age-gate__submit {
+  margin: 10px 0 20px;
+
+  @media screen and (min-width: 50em) {
+    margin: 20px 0;
+  }
 }
 
 .modal__content-inner .age-gate__form .age-gate__month::after,
@@ -245,27 +340,37 @@
   top: 0;
   height: 100%;
   width: 50px;
-  line-height: 50px;
+  line-height: 1.75rem;
   transform: rotate(90deg);
   text-align: center;
   border-bottom: 1px solid $dark;
   pointer-events: none;
+  font-size: 2rem;
+
+  @media screen and (min-width: 50em) {
+    line-height: 2.75rem;
+  }
 }
 
 .modal__content-inner .age-gate__form > div .form-select,
 .modal__content-inner .age-gate__form > div .form-input {
   position: relative;
   width: 100%;
-  height: 50px;
+  height: 40px;
   background: $light;
   border: 1px solid $dark;
   border-radius: 0;
-  padding: 10px 15px;
+  padding: 5px 10px;
   color: $dark;
   font-family: 'Futura', 'Futura PT', sans-serif;
   text-transform: uppercase;
   appearance: none;
   -webkit-appearance: none;
+
+  @media screen and (min-width: 50em) {
+    height: 50px;
+    padding: 10px 15px;
+  }
 }
 
 .modal__content-inner .age-gate__form > div .form-select:focus-visible,
@@ -274,6 +379,29 @@
 .modal__content-inner .age-gate__form > div .form-input:focus {
   border-color: $red;
   outline: none;
+}
+
+.modal__content-inner .age-gate__subheading {
+  margin: 0 30px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 1;
+
+  @media screen and (min-width: 75em) {
+    font-size: 1.75rem;
+  }
+
+  em {
+    color: $red;
+    font-weight: 400;
+    font-family: 'Chippewa Falls';
+    font-style: normal;
+    font-size: 1.75rem;
+
+    @media screen and (min-width: 75em) {
+      font-size: 2rem;
+    }
+  }
 }
 
 .modal__content-inner .age-gate__form > div .form-input::placeholder {
@@ -287,4 +415,40 @@
 
 .modal__content-inner h3 {
   margin: 0;
+}
+
+.modal__content-inner {
+  .age-gate__notice {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: $red;
+    font-weight: bold;
+  }
+
+  #age-gate-input--submit {
+    border: 0;
+    background: $red;
+    border-radius: 50px;
+    padding: 15px 40px;
+    color: $light;
+    font-family: 'Bizarre Sans';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .25s ease;
+
+    &:hover,
+    &:focus {
+      background: $dark;
+    }
+  }
+}
+
+.browser--chrome {
+  .age-gate__heading {
+    &::before {
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
 }

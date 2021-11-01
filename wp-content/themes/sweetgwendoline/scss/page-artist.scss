@@ -1,0 +1,388 @@
+@import '_imports.scss';
+
+.page-template-page-artist {
+	article.page {
+		width: calc(100% + 104px);
+		margin-left: -52px;
+		position: relative;
+		overflow: hidden;
+
+		@media screen and (min-width: 50em) {
+			margin-bottom: -150px;
+		}
+	}
+
+	.entry-header {
+		padding: 10px 0;
+		border-bottom: 2px solid $dark;
+
+		@media screen and (min-width: 50em) {
+			padding: 10px 20px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: calc(100% - 3px);
+			background: $red;
+		}
+	}
+
+	h1.entry-title {
+		margin: 0;
+		text-align: center;
+		font-weight: 700;
+		line-height: 1;
+		font-size: 20vw;
+		color: $light;
+		text-transform: uppercase;
+
+		@media screen and (min-width: 35em) {
+			font-size: 9rem;
+		}
+
+		span {
+			position: relative;
+			display: block;
+			color: $dark;
+			font-family: 'Chippewa Falls';
+			text-transform: none;
+			font-weight: 400;
+			font-size: 3rem;
+			line-height: 1;
+			margin-bottom: -1.5rem;
+			transform: skewY(-7deg);
+
+			@media screen and (min-width: 50em) {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: -2rem;
+				margin-bottom: 0;
+				font-size: 7rem;
+				transform: translateY(-5%) skewY(-4deg);
+			}
+		}
+	}
+
+	.entry-wrapper {
+		position: relative;
+		z-index: 1;
+
+		@media screen and (max-width: 49.999em) {
+			&.entry-wrapper--desktop {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: 50em) {
+			&.entry-wrapper--mobile {
+				display: none;
+			}
+		}
+	}
+
+	.entry-content {
+		padding: 20px 52px 0;
+		margin: 0 auto;
+		max-width: 1400px;
+		width: 100%;
+
+		@media screen and (min-width: 50em) {
+			padding: 40px 52px;
+		}
+
+		p {
+			font-size: 1.125rem;
+			line-height: 1.6;
+
+			strong {
+				font-family: 'Bizarre Sans';
+				font-weight: 400;
+				letter-spacing: 1.5px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+
+				&.freedom {
+					margin-left: -52px;
+					margin-right: -52px;
+					width: calc(100% + 104px);
+					max-width: calc(100% + 104px);
+				}
+			}
+		}
+
+		.frame {
+			&.frame--red {
+				border: 100px solid $red;
+				background-color: $red;
+				background-clip: content-box;
+				border-image: url('/wp-content/themes/sweetgwendoline/img/frame-red.png') 200;
+				color: $light;
+				margin-left: -40px;
+				margin-right: -40px;
+
+				&.frame--sm {
+					border: 50px solid $red;
+					border-image: url('/wp-content/themes/sweetgwendoline/img/frame-red-sm.png') 100;
+				}
+			}
+
+			img {
+				width: 100%;
+
+				&.john {
+					@media screen and (max-width: 34.999em) {
+						width: calc(100% + 40px);
+						max-width: calc(100% + 40px);
+						margin: -50px -20px -20%;
+						transform: translateY(-20%);
+					}
+				}
+			}
+
+			h2 {
+				margin-top: 0;
+
+				em {
+					display: block;
+					font-family: 'Chippewa Falls';
+					font-size: 2rem;
+				}
+			}
+
+			p.buy-now {
+				text-align: center;
+
+				@media screen and (max-width: 34.999em) {
+					margin-bottom: -50%;
+				}
+
+				img {
+					width: 80%;
+					border-radius: 50%;
+					box-shadow: 0 10px 20px rgba($dark, .25);
+				}
+			}
+
+			& + p {
+				margin: 20px -52px;
+				overflow: hidden;
+
+				@media screen and (max-width: 34.999em) {
+					margin-top: 70px;
+				}
+
+				img {
+					width: 135%;
+					max-width: 135%;
+					transform: translateX(-30%);
+				}
+			}
+		}
+	}
+
+	.entry-content--desktop {
+		.frame {
+			position: relative;
+			float: right;
+			width: 50%;
+			margin-bottom: 15%;
+
+			@media screen and (min-width: 87.5em) {
+				margin-top: 20%;
+			}
+
+			* {
+				margin-left: -40px;
+				margin-right: -40px;
+
+				@media screen and (min-width: 87.5em) {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			.john {
+				width: calc(100% + 80px);
+				max-width: calc(100% + 80px);
+
+				@media screen and (min-width: 87.5em) {
+					width: 100%;
+					margin: -100px 0 -50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			.buy-now {
+				position: absolute;
+				z-index: 1;
+				width: calc(100% + 80px);
+
+				@media screen and (min-width: 87.5em) {
+					width: 100%;
+				}
+			}
+		}
+
+		.frame {
+			& ~ * {
+				clear: none;
+				max-width: calc(50% - 50px);
+				padding: 0 20px;
+				line-height: 1.8;
+
+				@media screen and (min-width: 87.5em) {
+					padding: 0 130px;
+				}
+			}
+
+			& ~ h2 {
+				padding: 0;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			& ~ .dark {
+				position: relative;
+				background: $dark;
+				color: $light;
+				padding: 20px 50px;
+				margin: 45px 0 50px;
+				font-family: 'Chippewa Falls';
+				line-height: 1.8;
+				font-size: 1.5rem;
+				max-width: calc(50% - 80px);
+
+				@media screen and (min-width: 87.5em) {
+					max-width: calc(50% - 210px);
+					margin-left: 80px;
+					margin-right: 80px;
+				}
+
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: -12px;
+					right: -12px;
+					bottom: -12px;
+					left: -12px;
+					border: 1px solid $dark;
+					pointer-events: none;
+				}
+			}
+
+			& ~ .desk {
+				position: relative;
+				padding: 12% 0;
+
+				img {
+					transform: translateX(-12%) scale(1.78);
+				}
+			}
+		}
+	}
+
+	.slideshow {
+		@media screen and (max-width: 49.999em) {
+			&.slideshow--desktop {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: 50em) {
+			&.slideshow--mobile {
+				display: none;
+			}
+		}
+
+		&.slideshow--mobile {
+			position: relative;
+			width: 100%;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		&.slideshow--desktop {
+			clear: both;
+			position: relative;
+			padding: 0 50px 50px;
+			width: 100%;
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+
+		.button--slider {
+			position: absolute;
+			z-index: 10;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+			padding: 20px;
+
+			&.button--prev {
+				left: 0;
+			}
+
+			&.button--next {
+				right: 0;
+			}
+		}
+	}
+
+	.swiper {
+		&.swiper--mobile {
+			padding-bottom: 20px;
+		}
+		&.swiper--desktop {
+			padding-bottom: 30px;
+		}
+
+		.swiper-pagination {
+			bottom: 0;
+
+			.swiper-pagination-bullet {
+				border: 1px solid $dark;
+				background: $light;
+				height: 10px;
+				width: 10px;
+				border-radius: 50%;
+				opacity: 1;
+				transition: all .25s ease;
+
+				@media screen and (min-width: 50em) {
+					height: 16px;
+					width: 16px;
+				}
+
+				&.swiper-pagination-bullet-active {
+					background: $red;
+					border-color: $red;
+				}
+			}
+		}
+	}
+}
+
+.browser--chrome {
+	.entry-content {
+		img[src*=".png"] {
+			image-rendering: -webkit-optimize-contrast;
+		}
+	}
+
+	.slideshow {
+		img {
+			image-rendering: -webkit-optimize-contrast;
+		}
+	}
+}

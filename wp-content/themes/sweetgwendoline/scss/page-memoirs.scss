@@ -131,7 +131,12 @@
 			}
 
 			.excerpt-more {
-				display: block;
+				//display: block;
+				
+				// TEMPORARY
+				display: none;
+				// TEMPORARY
+
 				margin: 20px auto 0;
 				width: 100%;
 				max-width: 300px;

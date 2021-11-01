@@ -12,11 +12,16 @@
 		width: calc(100% + 104px);
 		margin-left: -52px;
 
+		@media screen and (min-width: 35em) {
+			background-size: 120% auto;
+			min-height: 120vw;
+		}
+
 		@media screen and (min-width: 50em) {
 			background-size: contain;
-			height: 70vh;
+			height: 68vh;
 			min-height: 500px;
-			max-height: 700px;
+			max-height: 750px;
 		}
 
 		.delight,
@@ -101,6 +106,10 @@
 			height: 60%;
 			background: transparent url('/wp-content/themes/sweetgwendoline/img/home-quote.svg') center top / 60% auto no-repeat;
 
+			@media screen and (min-width: 120em) {
+				background-size: 280px auto;
+			}
+
 			&__inner {
 				opacity: 0;
 			}
@@ -108,7 +117,7 @@
 
 		.buy-now,
 		.quote {
-			@media screen and (max-width: 49.999em) {
+			@media screen and (max-width: 59.999em) {
 				display: none;
 			}
 		}
@@ -129,6 +138,7 @@
 					color: $light;
 					background: $dark;
 					line-height: 2.5rem;
+					letter-spacing: 0.5px;
 
 					@media screen and (max-width: 49.999em) {
 						display: none;
@@ -138,6 +148,48 @@
 						font-size: 2rem;
 						line-height: 2.75rem;
 						transform: translateY(96px);
+						letter-spacing: 1px;
+					}
+
+					strong {
+						display: inline-block;
+						width: 1.25vw;
+						color: transparent;
+						background: transparent url('/wp-content/themes/sweetgwendoline/img/o.svg') center center / auto 1.6vw no-repeat;
+
+						@media screen and (min-width: 87.5em) {
+							width: 1.25rem;
+							background-size: auto 1.6rem;
+						}
+
+						&:first-of-type {
+							margin-left: .125vw;
+
+							@media screen and (min-width: 87.5em) {
+								margin-left: .125rem;
+							}
+						}
+					}
+
+					em {
+						color: $red;
+						font-size: 2.25vw;
+						font-family: 'Chippewa Falls';
+						font-weight: 400;
+						text-transform: lowercase;
+						font-style: normal;
+
+						@media screen and (min-width: 87.5em) {
+							font-size: 2.5rem;
+						}
+					}
+
+					em.in {
+						font-size: 2.75vw;
+
+						@media screen and (min-width: 87.5em) {
+							font-size: 2.75rem;
+						}
 					}
 
 					&::before {

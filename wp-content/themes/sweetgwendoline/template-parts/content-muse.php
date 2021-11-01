@@ -94,9 +94,26 @@
 				<div class="frame-inner">
 					<?php the_field('framed_content'); ?>
 				</div>
-				<a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a>
+				<!-- <a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a> -->
 			</div>
 		</div><!-- .entry-supplemental -->
+
+		<?php
+			$sweet_gwen = get_field('sweet_gwendoline');
+
+			if($sweet_gwen): ?>
+		    <div class="sweet-gwendoline">
+		    	<h2 class="sg-title"><?php echo $sweet_gwen['title']; ?></h2>
+		    	<div class="sg-image">
+		    		<img src="<?php echo esc_url( $sweet_gwen['image']['url'] ); ?>" alt="<?php echo esc_attr( $sweet_gwen['image']['alt'] ); ?>" class="gwen" />
+		    		<a href="<?php the_field('thirstie', 'option'); ?>" class="buy-now" title="Buy Now"><img src="/wp-content/themes/sweetgwendoline/img/buy-now-circle.svg" alt="Buy Now" /></a>
+		    	</div>
+	        <div class="sg-wrapper">
+	        	<h2 class="sg-title"><?php echo $sweet_gwen['title']; ?></h2>
+	        	<div class="sg-content"><?php echo $sweet_gwen['content']; ?></div>
+	        </div>
+		    </div>
+		<?php endif; ?>
 </div><!-- .entry-wrapper -->
 
 	<footer class="entry-footer">

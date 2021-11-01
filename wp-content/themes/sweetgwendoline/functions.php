@@ -188,6 +188,7 @@ function sweetgwen_scripts() {
 	wp_enqueue_style( 'swiper-styles', get_template_directory_uri() . '/vendor/swiper/swiper-bundle.min.css', false, '7.2.1', 'all' );
 	wp_style_add_data( 'sweetgwen-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'js-cookie', get_template_directory_uri() . '/vendor/js-cookie/js.cookie.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'swiper-scripts', get_template_directory_uri() . '/vendor/swiper/swiper-bundle.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'sweetgwen-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'sweetgwen-scripts', get_template_directory_uri() . '/js/sweetgwen.js', array('jquery'), _S_VERSION, true );
