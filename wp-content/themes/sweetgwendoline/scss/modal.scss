@@ -82,12 +82,29 @@
     padding: 20px;
 
     @media screen and (min-width: 50em) {
-      height: 60%;
+      // height: 60%;
       padding: 30px;
     }
 
     .drinks {
       height: 100%;
+
+      .drink {
+        @media screen and (min-width: 50em) and (min-height: 40em) {
+          align-items: center;
+        }
+
+        .drink__content {
+          display: block;
+          height: auto;
+          margin: 30px;
+          padding: 0;
+
+          @media screen and (min-width: 50em) {
+            margin: 40px 50px;
+          }
+        }
+      }
     }
 
     .swiper-pagination {
