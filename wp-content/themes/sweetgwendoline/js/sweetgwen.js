@@ -12,6 +12,20 @@
     return false;
   });
 
+  // Footer - Open social media links in new window
+  $(document).on('click', 'a.wp-block-social-link-anchor', function(e) {
+    window.open(this.href);
+    e.preventDefault();
+    return false;
+  });
+
+  // Add social links to mobile nav
+  /*
+  let socialLinks = $('.footer-brand .wp-block-social-links').wrap('<li class="social-links mobile-only"></li>').parent().clone();
+  $('#site-navigation #primary-menu').append(socialLinks);
+  $('.footer-brand .wp-block-social-links').unwrap();
+  */
+
   // Modal - cookie
   let ageCookie = Cookies.get('sg-age-check');
 
