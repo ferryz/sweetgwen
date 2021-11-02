@@ -1,5 +1,17 @@
 @import '_imports.scss';
 
+html.modal-active {
+  touch-action: none;
+
+  body {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
+    min-height: 100vh;
+  }
+}
+
 /* Modal - Age Gate */
 
 .overlay {
@@ -390,6 +402,17 @@
   }
 }
 
+.modal__content-inner .age-gate__form #age-gate-input--year::-webkit-outer-spin-button,
+.modal__content-inner .age-gate__form #age-gate-input--year::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal__content-inner .age-gate__form #age-gate-input--year {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
 .modal__content-inner .age-gate__form > div .form-select:focus-visible,
 .modal__content-inner .age-gate__form > div .form-input:focus-visible,
 .modal__content-inner .age-gate__form > div .form-select:focus,
@@ -422,6 +445,7 @@
 }
 
 .modal__content-inner .age-gate__form > div .form-input::placeholder {
+  letter-spacing: 1px;
   color: $dark;
   opacity: 1;
 }

@@ -32,6 +32,7 @@
   if(ageCookie == 'verified') {
     // do not show age gate
   } else {
+    $('html').addClass('modal-active');
     $('.overlay--age-gate').removeClass('overlay--disabled');
   }
 
@@ -64,6 +65,8 @@
     if(age >= 21) {
       Cookies.set('sg-age-check', 'verified', { expires: 7, sameSite: 'strict' });
       $('.overlay--age-gate').addClass('overlay--disabled');
+      $('html').removeClass('modal-active');
+      $(window).scrollTop(0);
     } else {
     	$('.age-gate__notice').show();
     }
@@ -86,8 +89,9 @@
     let age = Math.abs(year - 1970);
 
     if(age >= 21) {
-      Cookies.set('sg-age-check', 'verified', { expires: 7, sameSite: 'strict' });
       $('.overlay--age-gate').addClass('overlay--disabled');
+      $('html').removeClass('modal-active');
+      $(window).scrollTop(0);
     } else {
       $('.age-gate__notice').show();
     }

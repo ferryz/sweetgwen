@@ -58,6 +58,10 @@
       right: 50px;
     }
 
+    @media screen and (max-width: 320px) {
+      right: 30px;
+    }
+
     @media screen and (min-width: 50em) {
       right: 110px;
       top: 10px;

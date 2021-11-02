@@ -110,7 +110,7 @@
 						</select>
 					</div>
 					<div class="age-gate__year">
-						<input id="age-gate-input--year" class="form-item form-input" type="text" maxlength="4" placeholder="Year">
+						<input id="age-gate-input--year" class="form-item form-input" type="number" maxlength="4" inputmode="numeric" pattern="[0-9]*" placeholder="Year">
 					</div>
 					<div class="age-gate__submit">
 						<input id="age-gate-input--submit" class="form-item form-submit" type="button" value="Enter">

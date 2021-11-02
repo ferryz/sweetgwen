@@ -113,6 +113,10 @@
   outline: none;
   cursor: pointer;
 
+  @media screen and (max-width: 320px) {
+    left: 32px;
+  }
+
   span {
     display: none;
   }
