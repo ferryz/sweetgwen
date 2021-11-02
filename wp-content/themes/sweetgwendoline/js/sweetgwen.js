@@ -47,7 +47,7 @@
     e.preventDefault();
   });
 
-  // Modal submit
+  // Modal submit - button
   $(document).on('click', '#age-gate-input--submit', function(e) {
   	let ageMonth = $('#age-gate-select--month').val();
     let ageDay = $('#age-gate-select--day').val();
@@ -69,6 +69,30 @@
     }
 
 	  e.preventDefault();
+  });
+
+  // Modal submit - form submit
+  $('.age-gate__form').submit(function(e) {
+    let ageMonth = $('#age-gate-select--month').val();
+    let ageDay = $('#age-gate-select--day').val();
+    let ageYear = $('#age-gate-input--year').val();
+    let dob = new Date();
+    if(ageMonth != null && ageDay != null & ageYear != null) {
+      dob = new Date(ageYear,ageMonth,ageDay);
+    }
+    let month_diff = Date.now() - dob.getTime();
+    let age_dt = new Date(month_diff); 
+    let year = age_dt.getUTCFullYear();
+    let age = Math.abs(year - 1970);
+
+    if(age >= 21) {
+      Cookies.set('sg-age-check', 'verified', { expires: 7, sameSite: 'strict' });
+      $('.overlay--age-gate').addClass('overlay--disabled');
+    } else {
+      $('.age-gate__notice').show();
+    }
+
+    e.preventDefault();
   });
 
   // Artist - Slideshows
