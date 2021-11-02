@@ -27,6 +27,12 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+		<?php
+		$byline = get_field('byline');
+		if($byline): ?>
+			<div class="byline"><p><em><?php echo $byline; ?></em></p></div>
+		<?php endif; ?>
+
 	</header><!-- .entry-header -->
 
 	<?php sweetgwendoline_post_thumbnail(); ?>
