@@ -409,8 +409,8 @@ html.modal-active {
 }
 
 .modal__content-inner .age-gate__form #age-gate-input--year {
-  -moz-appearance: textfield;
   -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
 
 .modal__content-inner .age-gate__form > div .form-select:focus-visible,
