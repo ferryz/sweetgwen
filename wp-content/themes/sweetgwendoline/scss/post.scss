@@ -49,6 +49,15 @@
 			width: 100%;
 			vertical-align: bottom;
 		}
+
+		.caption {
+			display: inline-block;
+			margin: 15px 10px 0;
+
+			@media screen and (min-width: 50em) {
+				margin: 0;
+			}
+		}
 	}
 
 	.entry-content {

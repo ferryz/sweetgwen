@@ -159,18 +159,13 @@
     $('.display-posts-pagination a.prev').text('<');
   }
 
-}( jQuery ) );
+  // Single Post - Display Featured Image Alt Text
+  if($('body.single-post').length && $('.post-thumbnail').length) {
+    let imgCaption = $('.post-thumbnail img').attr('alt');
 
-/*
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  navigation: {
-    nextEl: '.button--next',
-    prevEl: '.button--prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-  },
-});
-*/
+    if(imgCaption.length > 0) {
+      $('.post-thumbnail').append('<small class="caption">' + imgCaption + '</small>');
+    }
+  }
+
+}( jQuery ) );

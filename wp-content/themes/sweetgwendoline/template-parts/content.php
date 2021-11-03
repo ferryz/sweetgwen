@@ -27,6 +27,7 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+		
 		<?php
 		$byline = get_field('byline');
 		if($byline): ?>
