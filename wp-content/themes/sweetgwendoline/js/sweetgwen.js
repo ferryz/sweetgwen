@@ -89,6 +89,7 @@
     let age = Math.abs(year - 1970);
 
     if(age >= 21) {
+      Cookies.set('sg-age-check', 'verified', { expires: 7, sameSite: 'strict' });
       $('.overlay--age-gate').addClass('overlay--disabled');
       $('html').removeClass('modal-active');
       $(window).scrollTop(0);
