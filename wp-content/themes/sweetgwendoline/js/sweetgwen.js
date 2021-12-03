@@ -19,13 +19,6 @@
     return false;
   });
 
-  // Add social links to mobile nav
-  /*
-  let socialLinks = $('.footer-brand .wp-block-social-links').wrap('<li class="social-links mobile-only"></li>').parent().clone();
-  $('#site-navigation #primary-menu').append(socialLinks);
-  $('.footer-brand .wp-block-social-links').unwrap();
-  */
-
   // Modal - cookie
   let ageCookie = Cookies.get('sg-age-check');
 
@@ -48,7 +41,24 @@
     e.preventDefault();
   });
 
+  // Yes/No Age Gate
+  $(document).on('click', '.age-gate__buttons a', function(e) {
+    let legalAge = $(this).attr('data-legal-age');
+
+    if(legalAge == "true") {
+      Cookies.set('sg-age-check', 'verified', { expires: 7, sameSite: 'strict' });
+      $('.overlay--age-gate').addClass('overlay--disabled');
+      $('html').removeClass('modal-active');
+      $(window).scrollTop(0);
+    } else {
+      $('.age-gate__notice').show();
+    }
+
+    e.preventDefault();
+  });
+
   // Modal submit - button
+  /*
   $(document).on('click', '#age-gate-input--submit', function(e) {
   	let ageMonth = $('#age-gate-select--month').val();
     let ageDay = $('#age-gate-select--day').val();
@@ -73,8 +83,10 @@
 
 	  e.preventDefault();
   });
+  */
 
   // Modal submit - form submit
+  /*
   $('.age-gate__form').submit(function(e) {
     let ageMonth = $('#age-gate-select--month').val();
     let ageDay = $('#age-gate-select--day').val();
@@ -99,6 +111,7 @@
 
     e.preventDefault();
   });
+  */
 
   // Artist - Slideshows
   if($('.slideshow--desktop').length) {

@@ -313,6 +313,7 @@ html.modal-active {
   display: block;
 }
 
+/*
 .modal__content-inner .age-gate__form {
   display: flex;
   flex-flow: column nowrap;
@@ -421,11 +422,13 @@ html.modal-active {
   outline: none;
 }
 
+*/
+
 .modal__content-inner .age-gate__subheading {
   margin: 0 30px;
   text-transform: uppercase;
   font-size: 1.25rem;
-  line-height: 1;
+  line-height: 1.25;
 
   @media screen and (min-width: 75em) {
     font-size: 1.75rem;
@@ -461,27 +464,43 @@ html.modal-active {
 .modal__content-inner {
   .age-gate__notice {
     padding: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     color: $red;
     font-weight: bold;
   }
 
-  #age-gate-input--submit {
-    border: 0;
-    background: $red;
-    border-radius: 50px;
-    padding: 15px 40px;
-    color: $light;
-    font-family: 'Bizarre Sans';
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.25rem;
-    cursor: pointer;
-    transition: all .25s ease;
+  .age-gate__buttons {
+    margin: 20px 20px 0;
 
-    &:hover,
-    &:focus {
-      background: $dark;
+    a {
+      display: inline-block;
+      border: 0;
+      margin: 5px;
+      background: $red;
+      border-radius: 50px;
+      padding: 12px 50px;
+      color: $light;
+      font-family: 'Bizarre Sans';
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: all .25s ease;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background: $dark;
+      }
+
+      &.age-gate__no {
+        background: $dark;
+
+        &:hover,
+        &:focus {
+          background: lighten($dark, 20%);
+        }
+      }
     }
   }
 }
